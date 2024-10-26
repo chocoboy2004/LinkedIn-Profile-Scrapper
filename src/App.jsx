@@ -3,6 +3,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { useState } from 'react';
 import axios from 'axios';
 import { rapidApiHost, rapidApiKey } from '../index.js';
+import CXI from "./assets/codex_ori.png"
 
 const App = () => {
   const [URL, setURL] = useState("")
@@ -125,8 +126,10 @@ const App = () => {
 
           <div>
             {
-              data.profilePicture && (
+              data.profilePicture ? (
                 <img src={data.profilePicture} alt="image" className='mt-5 h-96 rounded-2xl' />
+              ) : (
+                <img src={CXI} alt="image" className='mt-5 h-96 rounded-2xl' />
               )
             }
           </div>
